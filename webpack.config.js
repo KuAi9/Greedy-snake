@@ -4,7 +4,7 @@
  * @Author: SuperLy
  * @Date: 2022-01-16 20:41:32
  * @LastEditors: SuperLy
- * @LastEditTime: 2022-01-16 22:06:40
+ * @LastEditTime: 2022-01-22 21:19:48
  */
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -19,7 +19,13 @@ module.exports = {
         // 输出到目录
         path: path.resolve(__dirname, './dist'),
         // 打包前先清理dist文件夹
-        clean: true
+        clean: true,
+        // 告诉webpack不使用箭头
+        environment: {
+            arrowFunction: false,
+            // 不使用const,此时兼容IE 10
+            const: false
+        }
     },
     // 开发环境
     mode: 'development',
@@ -57,7 +63,7 @@ module.exports = {
             test: /\.s[ac]ss$/i,
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         }, {
-            test: /\.js$/,
+            test: /\.ts$/,
             // 排除 node_modules 中的 js 文件
             exclude: /node_modules/,
             use: [{
@@ -67,5 +73,8 @@ module.exports = {
             }]
 
         }]
+    },
+    resolve: {
+        extensions: [".ts", '.tsx', '.js']
     }
 }

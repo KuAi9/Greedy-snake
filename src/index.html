@@ -4,7 +4,7 @@
  * @Author: SuperLy
  * @Date: 2022-01-16 20:43:15
  * @LastEditors: SuperLy
- * @LastEditTime: 2022-01-16 22:28:32
+ * @LastEditTime: 2022-01-23 14:56:07
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,26 @@
 </head>
 
 <body>
+    <!-- 游戏设置 -->
+    <div id="GameConfig">
+        <h3>游戏设置</h3>
+        <div id="mapConfig">
+            地图设置：
+            地图宽度<input type="text" value="300" id="mapWidth">
+            地图长度<input type="text" value="300" id="mapHeight">
+            地图左右边距<input type="text" value="120" id="margin">
+            单元格大小<input type="txt" value="10" id="size">
+        </div>
+        <div id="levelConfig">
+            等级设置：
+            每次升级所需积分<input type="text" value="10" id="needScore">
+            最高等级<input type="text" value="10" id="maxLevel">
+            移动速度基数(ms)<input type="text" value="300" id="moveSpe"> </div>
+        <div>
+            <button id="config">修改设置</button>
+            <button id="reopen">重新游戏</button>
+        </div>
+    </div>
     <!-- 游戏容器 -->
     <div id="main">
         <!-- 游戏地图 -->
@@ -24,8 +44,6 @@
             <!-- 蛇 -->
             <div id="snake">
                 <!-- 蛇的身体 -->
-                <div></div>
-                <div></div>
                 <div></div>
             </div>
             <!-- 食物 -->
@@ -39,7 +57,7 @@
         <!-- 计分牌 -->
         <div id="score">
             <p>SCORE:<span>0</span></p>
-            <p>LEVEL:<span>0</span></p>
+            <p>LEVEL:<span>1</span></p>
         </div>
     </div>
 </body>

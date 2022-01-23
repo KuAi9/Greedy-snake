@@ -1,9 +1,10 @@
-$bgColor:#b9daaa;
+// 游戏同期背景颜色
+$bgColor: #b9daaa;
+$headColor: #008080;
 // 初始化CSS
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 // 游戏容器
@@ -12,43 +13,36 @@ $bgColor:#b9daaa;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 420px;
-    height: 420px;
-    margin: 100px auto;
+    margin: 30px auto 0px;
     border: 10px solid black;
     background-color: $bgColor;
     border-radius: 15px;
     // 地图
     #map {
         position: relative;
-        width: 304px;
-        height: 304px;
         border: 2px solid black;
         // 蛇
         #snake {
-            position: absolute;
-            top: 205px;
-            left: 150px;
-            &>div {
-                width: 10px;
-                height: 10px;
+            & > div {
+                position: absolute;
                 background-color: black;
                 border: 1px solid $bgColor;
+                box-sizing: border-box;
+            }
+            & > div:first-child {
+                background-color: $headColor;
+                z-index: 1;
             }
         }
         // 食物
         #food {
             position: absolute;
-            top: 135px;
-            left: 100px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            width: 10px;
-            height: 10px;
-            &>div {
-                width: 4px;
-                height: 4px;
+            & > div {
+                width: 40%;
+                height: 40%;
                 background-color: black;
                 transform: rotate(45deg);
             }
@@ -56,11 +50,37 @@ $bgColor:#b9daaa;
     }
     // 计分盘
     #score {
-        width: 280px;
         display: flex;
         justify-content: space-between;
-        font-family: 'Courier';
+        font-family: "Courier";
         font-size: 20px;
         font-weight: 900;
+    }
+}
+// 游戏设置
+#GameConfig {
+    width: 900px;
+    margin: 20px auto;
+    h3 {
+        text-align: center;
+    }
+    div {
+        margin: 15px;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 20px;
+        input {
+            width: 50px;
+            text-align: center;
+            height: 20px;
+            margin: 0px 20px 0px 15px;
+            vertical-align: middle;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+        }
     }
 }

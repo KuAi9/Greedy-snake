@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "module": "es6", // 编译后代码使用   ES5的模块化系统
+        "target": "es5", // 将编写的TS代码编译为 ES5 版本的 JS 代码
+        "strict": true,
+        "noEmitOnError": true
+    }
+}
