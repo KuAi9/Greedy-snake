@@ -4,7 +4,7 @@
  * @Author: SuperLy
  * @Date: 2022-01-22 21:05:57
  * @LastEditors: SuperLy
- * @LastEditTime: 2022-01-23 20:22:30
+ * @LastEditTime: 2022-01-23 20:28:12
  */
 import Food from './Food'
 import ScorePanel from './ScorePanel'
@@ -245,7 +245,6 @@ class GameControl {
             let bodyY = (bodies[i] as HTMLElement).offsetTop;
             // 头与身体重合
             if (x === bodyX && y === bodyY) {
-                console.log(bodies[i]);
                 console.error("撞到身体了，游戏结束~")
                 return true
             }
